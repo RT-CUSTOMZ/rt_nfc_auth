@@ -14,12 +14,19 @@ JSON strings transmitted from the authenticator look like this
 }
 ```
 
-**Buttons Message**
+**Buttons Pressed Message**
 ```json
 {
-    button1 : true,
-    button2 : false,
-    button3 : true
+    button : 'button1',
+    state : 'pressed'
+}
+```
+
+**Buttons released Message**
+```json
+{
+    button : 'button2',
+    state : 'released'
 }
 ```
 
