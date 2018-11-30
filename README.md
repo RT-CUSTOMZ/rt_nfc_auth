@@ -28,9 +28,9 @@ JSON strings to control the LEDs and buzzer look like this
 **LED Buzzer control message**
 ```json
 {
-    led1 : on,
-    led2 : off,
-    led3 : on,
-    buzzer : on
+    led1 : 'on',
+    led2 : 'off',
+    led3 : 'on',
+    buzzer : 'on'
 }
 ```
