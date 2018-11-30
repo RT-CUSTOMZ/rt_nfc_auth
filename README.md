@@ -17,7 +17,7 @@ JSON strings transmitted from the authenticator look like this
 **Buttons Pressed Message**
 ```json
 {
-    button : 'button1',
+    button : 1,
     state : 'pressed'
 }
 ```
@@ -25,7 +25,7 @@ JSON strings transmitted from the authenticator look like this
 **Buttons released Message**
 ```json
 {
-    button : 'button2',
+    button : 2,
     state : 'released'
 }
 ```
