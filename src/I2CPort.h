@@ -26,7 +26,7 @@ class I2CPort
 {
     private:
         TwoWire *pcfWire;
-        PCF857x *pcf8574;
+        
 
         bool led1On;
         bool led2On;
@@ -36,16 +36,35 @@ class I2CPort
         bool button2Pressed;
         bool button3Pressed;
 
+        bool buttonLock;
+
+        uint8_t button1DebounceOverflow;
+        uint8_t button2DebounceOverflow;
+        uint8_t button3DebounceOverflow;
+
     public:
         I2CPort();
 
+        PCF857x *pcf8574;
+
         void turnLEDOn(uint8_t led);
-        void turnLEDOf(uint8_t led);
+        void turnLEDOff(uint8_t led);
         void toggleLED(uint8_t led);
         void setLED(uint8_t led, bool on);
         void turnBuzzerOn();
         void turnBuzzerOff();
         void toggleBuzzer();
+        void resetInterrupt();
+
+        void readButtons();
+        
+        void unlockButtons();
+
+        void i2cInterrupt();
+
+        bool isButton1Pressed();
+        bool isButton2Pressed();
+        bool isButton3Pressed();
 };
 
 #endif
