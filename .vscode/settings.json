@@ -1,6 +1,6 @@
 {
     "terminal.integrated.env.linux": {
-        "PATH": "/home/lars/.platformio/penv/bin:/home/lars/.platformio/penv:/usr/share/Modules/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/lars/.local/bin:/home/lars/bin:/home/lars/.local/bin:/home/lars/bin",
+        "PATH": "/home/marvin/.platformio/penv/bin:/home/marvin/.platformio/penv:/usr/share/Modules/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/marvin/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin:/home/marvin/.local/bin:/home/marvin/bin:/home/marvin/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin:/home/marvin/.local/bin:/home/marvin/bin",
         "PLATFORMIO_CALLER": "vscode"
     }
 }

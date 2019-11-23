@@ -22,6 +22,7 @@ String macAdr;
 WiFiClient espClient;
 PubSubClient mqtttClient(espClient);
 
+// mqtt subscribe callback
 void callback(char* topic, byte* payload, unsigned int length) {
  
 }
@@ -96,6 +97,7 @@ void setup() {
 
 void reconnect() {
   String outTopic = outputTopic + macAdr;
+
   String inTopic = inputTopic + macAdr;
 
   // Loop until we're reconnected
