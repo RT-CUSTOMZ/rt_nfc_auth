@@ -10,6 +10,8 @@
 #define MISO_PIN 12
 #define LATCH_PIN 16
 
+typedef void callback();
+
 class IO74hc59x
 {
     private:
@@ -19,6 +21,7 @@ class IO74hc59x
 
         Ticker poll;
         void transmit();
+        callback* changeCallback;
 
         static void transmitCallback(void * this_pointer)
         {
@@ -30,6 +33,7 @@ class IO74hc59x
         int getRegCount();
         void setBit(int bit, int value);
         unsigned int getBit(int);
+        void setChangeCallback(callback* callback);
 
 };
 

@@ -69,6 +69,7 @@ IO74hc59x::IO74hc59x()
         Serial.println(registers[i]);
     }
 
+    //set ticker callback to execute transmit every 3ms
     poll.attach(3, IO74hc59x::transmitCallback, static_cast<void*>(this));
 }
 
@@ -120,8 +121,8 @@ void IO74hc59x::transmit()
     }
     Serial.println("\n");
 
-    if(change){
-        // TODO callback
+    if(change && changeCallback){
+        changeCallback();
     }
     //refresh outputs
     digitalWrite(LATCH_PIN, HIGH);
@@ -162,4 +163,11 @@ unsigned int IO74hc59x::getBit(int bit){
 int IO74hc59x::getRegCount()
 {
     return regCount;
+}
+
+void IO74hc59x::setChangeCallback(callback* callback)
+{
+    if(callback){
+        changeCallback = callback;
+    }
 }
